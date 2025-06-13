@@ -13,8 +13,8 @@
 ********************************************************************************/
 
 // Import the JSON data files
-const setData = require('../data/setData.json');
-const themeData = require('../data/themeData.json');
+const setData = require('../Data/setData.json');
+const themeData = require('../Data/themeData.json');
 
 // Define the LegoData class
 class LegoData {
