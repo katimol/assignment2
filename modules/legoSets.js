@@ -1,12 +1,12 @@
 /********************************************************************************
-* WEB700 – Assignment 3
+* WEB700 – Assignment 4
 *
 * I declare that this assignment is my own work in accordance with Seneca's
 * Academic Integrity Policy:
 *
 * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 *
-* Name: Kulsum Timol Student ID: 112867247 Date: 2025/06/13
+* Name: Kulsum Timol Student ID: 112867247 Date: 2025/07/06
 
 *URL : https://vercel.com/katimols-projects/assignment2/9jNYZxreDz6RfDKpZ1HZ6YfqxQhw
 *
@@ -80,6 +80,20 @@ class LegoData {
             }
         });
     }
+    // Adds a new set if it doesn't already exist
+    addSet(newSet) {
+        return new Promise((resolve, reject) => {
+            // Check for duplicate set_num
+            const exists = this.sets.find(set => set.set_num === newSet.set_num);
+        
+            if (exists) {
+                reject("Set already exists"); // Duplicate found
+            } else {
+                this.sets.push(newSet); // Add new set to the array
+                resolve(); // Resolve with no value
+            }
+        });
+    }        
 }
 module.exports = LegoData;
 
